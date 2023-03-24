@@ -1,9 +1,22 @@
-import { getPosts } from "@/utils/actions"
+import { getPosts } from "@/utils/post/actions"
+import Link from "next/link"
 
-export default function Home() {
+export default function Home({posts}) {
+  //console.log(posts)
+
   return (
     <>
-      <h1>Hello World</h1>
+      <div>
+        {posts.map((post) => (
+          <div key={post._id}>
+            <Link href={`/${encodeURIComponent(post._id)}`}>
+              <h1>{post.title}</h1>
+            </Link>
+            <p>{post.text}</p>
+          </div>
+        ))}
+        <Link href="/new"><button>New Post</button></Link>
+      </div>
     </>
   )
 }
