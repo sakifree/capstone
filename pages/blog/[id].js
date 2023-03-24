@@ -1,4 +1,4 @@
-import { getPost, getPosts } from "@/utils/post/actions"
+import { getPost, getPosts } from "@/utils/actions"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { useState } from "react"

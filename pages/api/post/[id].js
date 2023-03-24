@@ -1,5 +1,5 @@
 // "/api/post/:id" - SHOW, UPDATE, DELETE ROUTES
-import { getPost, updatePost, deletePost } from "@/utils/post/actions"
+import { getPost, updatePost, deletePost } from "@/utils/actions"
 
 export default async function(req, res){
     

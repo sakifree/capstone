@@ -1,5 +1,5 @@
 // "/api/post" - INDEX, CREATE ROUTES
-import { getPosts, createPost } from "@/utils/post/actions"
+import { getPosts, createPost } from "@/utils/actions"
 
 export default async function(req, res){
     try {

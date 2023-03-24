@@ -1,4 +1,4 @@
-import { getPosts } from "@/utils/post/actions"
+import { getPosts } from "@/utils/actions"
 import Link from "next/link"
 
 export default function Home({posts}) {
