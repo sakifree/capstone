@@ -9,7 +9,7 @@ export default function Home({posts}) {
       <div>
         {posts.map((post) => (
           <div key={post._id}>
-            <Link href={`/${encodeURIComponent(post._id)}`}>
+            <Link href={`/blog/${encodeURIComponent(post._id)}`}>
               <h1>{post.title}</h1>
               <img src={post.img}  alt={post.title} />
             </Link>
