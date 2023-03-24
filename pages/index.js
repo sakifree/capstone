@@ -11,6 +11,7 @@ export default function Home({posts}) {
           <div key={post._id}>
             <Link href={`/${encodeURIComponent(post._id)}`}>
               <h1>{post.title}</h1>
+              <img src={post.img}  alt={post.title} />
             </Link>
             <p>{post.text}</p>
           </div>
