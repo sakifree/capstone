@@ -44,9 +44,11 @@ const Show = ({post}) => {
             <Link href="/"><button>Home</button></Link>
             <h1>{post.title} Page</h1>
             <p>{post.text}</p>
+            <img src={post.img} alt={post.title} />
             <form onSubmit={handleUpdate}>
                 <input defaultValue={post.title} type="text" name="title" onChange={handleChange} />
                 <input defaultValue={post.text} type="text" name="text" onChange={handleChange} />
+                <input defaultValue={post.img} type= "text" name="img" onChange={handleChange} />
                 <input type="submit" value={`Update ${post.title}`} />
             </form>
 
