@@ -1,4 +1,3 @@
-require('dotenv').config()
 import mongoose from "mongoose";
 
 mongoose.connect(process.env.MONGO_URI, {
@@ -15,5 +14,7 @@ const postSchema = new mongoose.Schema({
     text: String,
     img: String
 }, {timestamps: true})
+
+export const dbconnection = mongoose
 
 export const Post = mongoose.models.Post || mongoose.model("Post", postSchema)
