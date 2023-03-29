@@ -41,7 +41,6 @@ const Show = ({post}) => {
 
     return (
         <div>
-            <Link href="/blog"><button>Home</button></Link>
             <h1>{post.title} Page</h1>
             <p>{post.text}</p>
             <img src={post.img} alt={post.title} />

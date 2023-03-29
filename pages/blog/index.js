@@ -21,9 +21,10 @@ const Index = ({posts}) => {
                   <img className="h-48 w-full object-cover md:h-full md:w-48" src={post.img} alt={post.title} />
               </div>
               <div className="p-8 overflow-hidden">
-                <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{post.title}</div>
-                 <a href="#" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{post.title}</a>
-                 <p className="mt-2 text-slate-500">{post.text}</p>
+                <Link href={`/blog/${encodeURIComponent(post._id)}`}>
+                  <h1 className="uppercase block mt-1 text-lg leading-tight font-semibold text-black hover:underline">{post.title}</h1>
+                </Link>
+                  <p className="mt-2 text-slate-500 truncate">{post.text}</p>
             </div>
           </div>
         </div>
