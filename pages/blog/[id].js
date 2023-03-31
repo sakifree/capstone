@@ -46,7 +46,7 @@ const Show = ({post}) => {
                 <h1>{post.title} Page</h1>
             </span>
             <div className="flex md:w-full md:justify-center">
-                <img className="h-32 w-full md:h-96 md:w-80" src={post.img} alt={post.title} />
+                <img className="w-full md:h-96 md:w-80" src={post.img} alt={post.title} />
             </div>
             <span>
                 <p>{post.text}</p>
@@ -55,7 +55,7 @@ const Show = ({post}) => {
                 <Popup trigger={<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> UPDATE </button>}
                     position="right center">
                     <div className="flex-wrap">
-                        <form className="md:flex-wrap md:w-1/2 w-11/12 mx-4 my-4 bg-slate-600 md:block" onSubmit={handleUpdate}>
+                        <form className="md:flex-wrap md:w-1/2 w-11/12 mx-4 my-4 bg-slate-400 md:block rounded-md" onSubmit={handleUpdate}>
                             <input className=" text-blue-400 mx-4 my-4" defaultValue={post.title} type="text" name="title" onChange={handleChange} />
                             <textarea className="mx-4 my-4" defaultValue={post.text} rows="10" cols="20" type="text" name="text" onChange={handleChange} />
                             <input className="mx-4 my-4" defaultValue={post.img} type= "text" name="img" onChange={handleChange} />
@@ -66,7 +66,7 @@ const Show = ({post}) => {
             </div>
             <div className="mx-4 my-4">
                 <form onSubmit={handleDelete}>
-                    <input className="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit" value={"DELETE"} /> 
+                    <input className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" type="submit" value={"DELETE"} /> 
                 </form>
             </div>
         </div>
