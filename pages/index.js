@@ -15,7 +15,7 @@ export default function Home({posts}) {
               </div>
               <div className="p-8 overflow-hidden">
                 <Link href={`/blog/${encodeURIComponent(post._id)}`}>
-                  <h1 className="uppercase block mt-1 text-lg leading-tight font-semibold text-black hover:underline">{post.title}</h1>
+                  <h1 className="uppercase block mt-1 text-lg leading-tight font-semibold text-black hover:no-underline hover:text-orange-500">{post.title}</h1>
                 </Link>
                   <p className="mt-2 text-white truncate">{post.text}</p>
             </div>
