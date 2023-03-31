@@ -39,7 +39,7 @@ const New = (props) => {
         //         <input type="submit" value="Create Post" />
         // </form>
 
-        <form className="w-full max-w-6xl mx-4 my-4" onSubmit={handleSubmit}>
+        <form className="md:flex-wrap md:text-center text-center md:w-9/12 w-11/12 mx-4 my-4" onSubmit={handleSubmit}>
             <div className="md:flex md:items-center mb-6">
                 <div className="md:w-1/3">
                     <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
