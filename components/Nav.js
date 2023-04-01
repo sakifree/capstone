@@ -8,7 +8,7 @@ const Nav = (props) => {
                     <Link href="/">HOME</Link>
                 </li>
                 <li className="px-4 py-2 font-bold text-white bg-green-500 rounded-2xl hover:bg-green-700">
-                    <Link href="/new">ADD BLOG</Link>
+                    <Link href="/new">ADD POST</Link>
                 </li>
             </ul>
         </nav>
