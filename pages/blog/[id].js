@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import { useState } from "react"
 import Popup from "reactjs-popup"
 
-const Show = ({post}) => {
+const Show = ({ post }) => {
 
     const router = useRouter()
 
@@ -14,7 +14,7 @@ const Show = ({post}) => {
     })
 
     const handleChange = (event) => {
-        setForm({...form, [event.target.name]: event.target.value})
+        setForm({ ...form, [event.target.name]: event.target.value })
     }
 
     const handleUpdate = async (event) => {
@@ -35,7 +35,7 @@ const Show = ({post}) => {
         await fetch(`/api/post/${post._id}`, {
             method: "delete"
         })
-        
+
         router.push("/")
     }
 
@@ -50,96 +50,89 @@ const Show = ({post}) => {
             <span>
                 <p>{post.text}</p>
             </span>
-            <div>
-            <form className="md:flex-wrap md:w-1/2 w-11/12 mx-4 my-4 bg-slate-400 md:block rounded-md" onSubmit={handleUpdate}>
-                            <input 
-                                className=" text-black-400 mx-4 my-4" 
-                                defaultValue={post.title} 
-                                type="text" 
-                                name="title" 
-                                onChange={handleChange} 
-                            />
-
-                            <textarea 
-                                className="mx-4 my-4" 
-                                defaultValue={post.text} 
-                                rows="10" 
-                                cols="20" 
-                                type="text" 
-                                name="text" 
-                                onChange={handleChange} 
-                            />
-
-                            <input 
-                                className="mx-4 my-4" 
-                                defaultValue={post.img} 
-                                type="text" 
-                                name="img" 
-                                onChange={handleChange} 
-                            />
-
-                            <input 
-                                className="bg-lime-500 hover:bg-lime-600 text-white font-bold py-2 px-4 rounded" 
-                                type="submit" 
-                                value="UPDATE" 
-                                
-                            />
-                        </form>
-            </div>
             <div className="mx-4 my-4">
                 <Popup trigger={<button className="bg-lime-500 hover:bg-lime-600 text-white font-bold py-2 px-4 rounded"> UPDATE </button>}
                     position="right center">
-                    <div className="flex-wrap">
-                        {/* UPDATE FORM */}
-                        {/* <form className="md:flex-wrap md:w-1/2 w-11/12 mx-4 my-4 bg-slate-400 md:block rounded-md" onSubmit={handleUpdate}>
-                            <input 
-                                className=" text-black-400 mx-4 my-4" 
-                                defaultValue={post.title} 
-                                type="text" 
-                                name="title" 
-                                onChange={handleChange} 
-                            />
-
-                            <textarea 
-                                className="mx-4 my-4" 
-                                defaultValue={post.text} 
-                                rows="10" 
-                                cols="20" 
-                                type="text" 
-                                name="text" 
-                                onChange={handleChange} 
-                            />
-
-                            <input 
-                                className="mx-4 my-4" 
-                                defaultValue={post.img} 
-                                type="text" 
-                                name="img" 
-                                onChange={handleChange} 
-                            />
-
-                            <input 
-                                className="bg-lime-500 hover:bg-lime-600 text-white font-bold py-2 px-4 rounded" 
-                                type="submit" 
-                                value="UPDATE" 
-                                
-                            />
-                        </form> */}
-                     </div>
+                    <div className="flex-wrap py-2 bg-slate-300 h-full w-full">
+                        <form className="md:flex-wrap md:text-center text-center md:w-9/12 w-11/12 mx-4 my-4" onSubmit={handleUpdate}>
+                            <div className="md:flex md:items-center mb-6">
+                                <div className="md:w-1/3">
+                                    <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
+                                        Title
+                                    </label>
+                                </div>
+                                <div className="md:w-2/3">
+                                    <input
+                                        className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-cyan-500"
+                                        defaultValue={post.title}
+                                        type="text"
+                                        name="title"
+                                        onChange={handleChange} 
+                                    />
+                                </div>
+                            </div>
+                            <div className="md:flex md:items-center mb-6">
+                                <div className="md:w-1/3">
+                                    <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
+                                        Image URL
+                                    </label>
+                                </div>
+                                <div className="md:w-2/3">
+                                    <input 
+                                        className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-cyan-500"
+                                        defaultValue={post.img}
+                                        type="text"
+                                        name="img"
+                                        onChange={handleChange} 
+                                    />
+                                </div>
+                            </div>
+                            <div className="md:flex md:items-center mb-6">
+                                <div className="md:w-1/3">
+                                    <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
+                                        Text
+                                    </label>
+                                </div>
+                                <div className="md:w-2/3">
+                                    <textarea 
+                                        className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-cyan-500"
+                                        defaultValue={post.text}
+                                        rows="10"
+                                        cols="20"
+                                        type="text"
+                                        name="text"
+                                        onChange={handleChange}  
+                                    />
+                                </div>
+                            </div>
+                            <div className="md:flex md:items-center mb-6">
+                            </div>
+                            <div className="md:flex md:items-center">
+                                <div className="md:w-1/3"></div>
+                                <div className="md:w-2/3">
+                                    <input 
+                                        className="shadow bg-teal-500 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" 
+                                        type="submit" 
+                                        value="Update" 
+                                    />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </Popup>
             </div>
             <div className="mx-4 my-4">
                 {/* DELETE FORM */}
                 <form onSubmit={handleDelete}>
-                    <input className="bg-rose-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" type="submit" value="DELETE" /> 
+                    <input className="bg-rose-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" type="submit" value="DELETE" />
                 </form>
             </div>
         </div>
     )
 
-} 
+}
 
-export async function getStaticPaths(){
+export async function getStaticPaths() {
     const posts = await getPosts()
     //console.log(posts)
 
@@ -151,7 +144,7 @@ export async function getStaticPaths(){
     }
 }
 
-export async function getStaticProps(context){
+export async function getStaticProps(context) {
     const { params } = context
     //console.log(context)
 
