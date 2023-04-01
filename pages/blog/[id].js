@@ -43,7 +43,7 @@ const Show = ({post}) => {
     return (
         <div className="flex-wrap">
             <span className="flex justify-center text-5xl my-2">
-                <h1>{post.title} Page</h1>
+                <h1>{post.title}</h1>
             </span>
             <div className="flex md:w-full md:justify-center">
                 <img className="w-full md:h-96 md:w-80" src={post.img} alt={post.title} />
