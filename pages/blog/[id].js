@@ -28,8 +28,7 @@ const Show = ({post}) => {
             body: JSON.stringify(form)
         })
 
-        router.push("/")
-        //router.reload(window.location.pathname)
+        router.reload(window.location.pathname)
     }
 
     const handleDelete = async (event) => {
@@ -52,22 +51,86 @@ const Show = ({post}) => {
             <span>
                 <p>{post.text}</p>
             </span>
+            <div>
+            <form className="md:flex-wrap md:w-1/2 w-11/12 mx-4 my-4 bg-slate-400 md:block rounded-md" onSubmit={handleUpdate}>
+                            <input 
+                                className=" text-black-400 mx-4 my-4" 
+                                defaultValue={post.title} 
+                                type="text" 
+                                name="title" 
+                                onChange={handleChange} 
+                            />
+
+                            <textarea 
+                                className="mx-4 my-4" 
+                                defaultValue={post.text} 
+                                rows="10" 
+                                cols="20" 
+                                type="text" 
+                                name="text" 
+                                onChange={handleChange} 
+                            />
+
+                            <input 
+                                className="mx-4 my-4" 
+                                defaultValue={post.img} 
+                                type="text" 
+                                name="img" 
+                                onChange={handleChange} 
+                            />
+
+                            <input 
+                                className="bg-lime-500 hover:bg-lime-600 text-white font-bold py-2 px-4 rounded" 
+                                type="submit" 
+                                value="UPDATE" 
+                                
+                            />
+                        </form>
+            </div>
             <div className="mx-4 my-4">
                 <Popup trigger={<button className="bg-lime-500 hover:bg-lime-600 text-white font-bold py-2 px-4 rounded"> UPDATE </button>}
                     position="right center">
                     <div className="flex-wrap">
-                        // UPDATE FORM
-                        <form className="md:flex-wrap md:w-1/2 w-11/12 mx-4 my-4 bg-slate-400 md:block rounded-md" onSubmit={handleUpdate}>
-                            <input className=" text-black-400 mx-4 my-4" defaultValue={post.title} type="text" name="title" onChange={handleChange} />
-                            <textarea className="mx-4 my-4" defaultValue={post.text} rows="10" cols="20" type="text" name="text" onChange={handleChange} />
-                            <input className="mx-4 my-4" defaultValue={post.img} type="text" name="img" onChange={handleChange} />
-                            <input className="bg-lime-500 hover:bg-lime-600 text-white font-bold py-2 px-4 rounded" type="submit" value="UPDATE" />
-                        </form>
+                        {/* UPDATE FORM */}
+                        {/* <form className="md:flex-wrap md:w-1/2 w-11/12 mx-4 my-4 bg-slate-400 md:block rounded-md" onSubmit={handleUpdate}>
+                            <input 
+                                className=" text-black-400 mx-4 my-4" 
+                                defaultValue={post.title} 
+                                type="text" 
+                                name="title" 
+                                onChange={handleChange} 
+                            />
+
+                            <textarea 
+                                className="mx-4 my-4" 
+                                defaultValue={post.text} 
+                                rows="10" 
+                                cols="20" 
+                                type="text" 
+                                name="text" 
+                                onChange={handleChange} 
+                            />
+
+                            <input 
+                                className="mx-4 my-4" 
+                                defaultValue={post.img} 
+                                type="text" 
+                                name="img" 
+                                onChange={handleChange} 
+                            />
+
+                            <input 
+                                className="bg-lime-500 hover:bg-lime-600 text-white font-bold py-2 px-4 rounded" 
+                                type="submit" 
+                                value="UPDATE" 
+                                
+                            />
+                        </form> */}
                      </div>
                 </Popup>
             </div>
             <div className="mx-4 my-4">
-                // DELETE FORM
+                {/* DELETE FORM */}
                 <form onSubmit={handleDelete}>
                     <input className="bg-rose-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" type="submit" value="DELETE" /> 
                 </form>

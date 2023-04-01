@@ -29,16 +29,6 @@ const New = (props) => {
     }
 
     return (
-        // <form onSubmit={handleSubmit}>
-        //     <label>Title</label>
-        //         <input type="text" name="title" value={form.title} onChange={handleChange} />
-        //     <label>Text</label>
-        //         <input type="text" name="text" value={form.text} onChange={handleChange} />
-        //     <label>Image</label>
-        //         <input type="text" name="img" value={form.img} onChange={handleChange} />
-        //         <input type="submit" value="Create Post" />
-        // </form>
-
         <form className="md:flex-wrap md:text-center text-center md:w-9/12 w-11/12 mx-4 my-4" onSubmit={handleSubmit}>
             <div className="md:flex md:items-center mb-6">
                 <div className="md:w-1/3">
