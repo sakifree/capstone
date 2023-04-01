@@ -1,7 +1,6 @@
 import { getPost, getPosts } from "@/utils/actions"
 import { useRouter } from "next/router"
 import { useState } from "react"
-import Popup from "reactjs-popup"
 
 const Show = ({ post }) => {
 
@@ -51,8 +50,6 @@ const Show = ({ post }) => {
                 <p>{post.text}</p>
             </span>
             <div className="mx-4 my-4">
-                <Popup trigger={<button className="bg-lime-500 hover:bg-lime-600 text-white font-bold py-2 px-4 rounded"> UPDATE </button>}
-                    position="right center">
                     <div className="flex-wrap py-2 bg-slate-300 h-full w-full">
                         <form className="md:flex-wrap md:text-center text-center md:w-9/12 w-11/12 mx-4 my-4" onSubmit={handleUpdate}>
                             <div className="md:flex md:items-center mb-6">
@@ -119,8 +116,8 @@ const Show = ({ post }) => {
                             </div>
                         </form>
                     </div>
-                </Popup>
             </div>
+
             <div className="mx-4 my-4">
                 {/* DELETE FORM */}
                 <form onSubmit={handleDelete}>
