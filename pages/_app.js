@@ -2,7 +2,7 @@ import 'tailwindcss/tailwind.css'
 import Nav from '@/components/Nav'
 import Head from 'next/head'
 
-export default function App({ Component, pageProps: {session, ...pageProps} }) {
+export default function App({ Component, pageProps }) {
   
   return (
     <>

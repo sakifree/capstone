@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import { useState } from "react"
 
 const Show = ({ post }) => {
-    console.log(post)
+    // console.log(post)
     const router = useRouter()
 
     const [form, setForm] = useState({
@@ -131,7 +131,7 @@ const Show = ({ post }) => {
 
 export async function getStaticPaths() {
     const posts = await getPosts()
-    //console.log(posts)
+    // console.log(posts)
 
     return {
         paths: posts.map(({ id }) => ({
@@ -149,7 +149,7 @@ export async function getStaticProps(context) {
     //console.log(id)
 
     const post = JSON.parse(JSON.stringify(await getPost(id)))
-    //console.log(post)
+    // console.log(post)
 
     return {
         props: {

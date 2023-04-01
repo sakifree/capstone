@@ -15,6 +15,6 @@ const postSchema = new mongoose.Schema({
     img: String
 }, {timestamps: true})
 
-export const dbconnection = mongoose
+export const connection = mongoose
 
 export const Post = mongoose.models.Post || mongoose.model("Post", postSchema)
