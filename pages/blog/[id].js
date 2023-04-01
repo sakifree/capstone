@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import { useState } from "react"
 
 const Show = ({ post }) => {
-
+    console.log(post)
     const router = useRouter()
 
     const [form, setForm] = useState({

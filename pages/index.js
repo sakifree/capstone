@@ -10,7 +10,7 @@ export default function Home({posts}) {
         {posts.map((post) => (
           <div key={post._id} className="max-w-md bg-gray-500 rounded-xl shadow-md overflow-hidden md:max-w-2xl mb-4 mx-4 md:w-1/2">
             <div className="md:flex">
-               <div class="md:shrink-0">
+               <div className="md:shrink-0">
                   <img className="h-48 w-full object-cover md:h-full md:w-48" src={post.img} alt={post.title} />
               </div>
               <div className="p-8 overflow-hidden">
