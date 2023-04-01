@@ -52,21 +52,21 @@ const Show = ({post}) => {
                 <p>{post.text}</p>
             </span>
             <div className="mx-4 my-4">
-                <Popup trigger={<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> UPDATE </button>}
+                <Popup trigger={<button className="bg-lime-500 hover:bg-lime-600 text-white font-bold py-2 px-4 rounded"> UPDATE </button>}
                     position="right center">
                     <div className="flex-wrap">
                         <form className="md:flex-wrap md:w-1/2 w-11/12 mx-4 my-4 bg-slate-400 md:block rounded-md" onSubmit={handleUpdate}>
-                            <input className=" text-blue-400 mx-4 my-4" defaultValue={post.title} type="text" name="title" onChange={handleChange} />
+                            <input className=" text-black-400 mx-4 my-4" defaultValue={post.title} type="text" name="title" onChange={handleChange} />
                             <textarea className="mx-4 my-4" defaultValue={post.text} rows="10" cols="20" type="text" name="text" onChange={handleChange} />
                             <input className="mx-4 my-4" defaultValue={post.img} type= "text" name="img" onChange={handleChange} />
-                            <input className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit" value={"UPDATE"} />
+                            <input className="bg-lime-500 hover:bg-lime-600 text-white font-bold py-2 px-4 rounded" type="submit" value="UPDATE" />
                         </form>
                      </div>
                 </Popup>
             </div>
             <div className="mx-4 my-4">
                 <form onSubmit={handleDelete}>
-                    <input className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" type="submit" value={"DELETE"} /> 
+                    <input className="bg-rose-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" type="submit" value="DELETE" /> 
                 </form>
             </div>
         </div>

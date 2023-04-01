@@ -5,9 +5,9 @@ export const authOptions = {
   // Configure one or more authentication providers
   providers: [
     Auth0Provider({
-        clientId: process.env.AUTH_CLIENT_ID,
-        clientSecret: process.env.AUTH0_CLIENT.SECRET,
-        issuer: process.env.AUTH0_ISSUER
+        // clientId: process.env.AUTH_CLIENT_ID,
+        // clientSecret: process.env.AUTH0_CLIENT.SECRET,
+        // issuer: process.env.AUTH0_ISSUER
     }),
   ],
   callbacks: {
