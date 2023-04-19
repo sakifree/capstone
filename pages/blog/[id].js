@@ -3,7 +3,8 @@ import { useRouter } from "next/router"
 import { useState } from "react"
 
 const Show = ({ post }) => {
-    // console.log(post)
+    console.log(post)
+    console.log(post.createdAt)
     const router = useRouter()
 
     const [form, setForm] = useState({
@@ -42,6 +43,9 @@ const Show = ({ post }) => {
         <div className="flex-wrap">
             <span className="flex justify-center text-5xl my-2">
                 <h1>{post.title}</h1>
+            </span>
+            <span>
+                <p>{post.createdAt}</p>
             </span>
             <div className="flex md:w-full md:justify-center">
                 <img className="w-full md:h-96 md:w-80" src={post.img} alt={post.title} />
@@ -162,7 +166,7 @@ export async function getServerSideProps(context){
         //console.log(context.query.id)
         const id = context.query.id
         const post = JSON.parse(JSON.stringify(await getPost(id)))
-        //console.log(blog)
+        //console.log(post)
     
         return {
             props: {

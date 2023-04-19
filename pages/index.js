@@ -2,7 +2,7 @@ import { getPosts } from "@/utils/actions"
 import Link from "next/link"
 
 export default function Home({posts}) {
-   console.log(posts)
+  //console.log(posts)
 
    return (
     <>
