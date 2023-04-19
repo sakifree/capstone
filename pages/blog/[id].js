@@ -4,7 +4,14 @@ import { useState } from "react"
 
 const Show = ({ post }) => {
     console.log(post)
-    console.log(post.createdAt)
+
+    const createdAt = post.createdAt
+    //console.log(createdAt)
+    const createdDate = new Date(createdAt)
+    const formatedDate = `${createdDate.getMonth()+1}/${createdDate.getDate()}/${createdDate.getFullYear()}`
+    console.log(`${createdDate.toDateString()}`)
+    console.log(formatedDate)
+
     const router = useRouter()
 
     const [form, setForm] = useState({
@@ -45,7 +52,7 @@ const Show = ({ post }) => {
                 <h1>{post.title}</h1>
             </span>
             <span>
-                <p>{post.createdAt}</p>
+                <p>{formatedDate}</p>
             </span>
             <div className="flex md:w-full md:justify-center">
                 <img className="w-full md:h-96 md:w-80" src={post.img} alt={post.title} />
